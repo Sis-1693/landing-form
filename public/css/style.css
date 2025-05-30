@@ -1,0 +1,200 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+#container {
+  background: #ffffff;
+  max-width: 480px;
+  width: 90%;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+#container h1 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+#container p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Button */
+#showFormBtn {
+  background-color: #5c6ac4;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(92,106,196,0.4);
+}
+#showFormBtn:hover {
+  background-color: #4a57b1;
+}
+
+/* Form styles */
+#appointmentForm {
+  background-color: #f0f4ff; /* Soft blue background */
+  border: 1px solid #d0dfff; /* Light border */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  padding: 20px;
+  margin-top: 20px;
+  display: none;
+  text-align: left;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+#appointmentForm label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 0.9rem;
+}
+#appointmentForm input[type="text"],
+#appointmentForm input[type="email"],
+#appointmentForm input[type="url"],
+#appointmentForm input[type="file"],
+#appointmentForm input[type="date"],
+#appointmentForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+#appointmentForm input:focus,
+#appointmentForm textarea:focus {
+  border-color: #5c6ac4;
+  outline: none;
+}
+#appointmentForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+
+#appointmentForm button[type="submit"] {
+  background-color: #5c6ac4;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(92,106,196,0.4);
+  transition: background-color 0.3s ease;
+}
+#appointmentForm button[type="submit"]:hover {
+  background-color: #4a57b1;
+}
+
+/* Success message box */
+.success-message {
+  color: #2ecc71;
+  background-color: #eafaf1;
+  border: 1px solid #2ecc71;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Spinner */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #5c6ac4;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode */
+body.dark-mode #landingContent {
+  background-color: #2a2a40;
+  border-color: #3a3a55;
+  color: #f5f7fa;
+}
+
+body.dark-mode #container {
+  background: #2a2a40;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #3a3a55;
+  color: #fff;
+  border-color: #5c6ac4;
+}
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+  border-color: #7a88f0;
+}
+
+/* Animation styles for landingContent and appointmentForm */
+#landingContent {
+  background-color: #f0f4ff; /* same soft blue background */
+  border: 1px solid #d0dfff; /* light blue border */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* subtle shadow */
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.slide-left {
+  transform: translateX(-50px);
+  opacity: 0;
+  pointer-events: none;
+}
+.slide-right {
+  transform: translateX(50px);
+  opacity: 0;
+  pointer-events: none;
+}
